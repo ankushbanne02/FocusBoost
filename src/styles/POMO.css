@@ -1,134 +1,185 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'montserrat';
-  }
-  
-  html, body {
-    height: 100%;
-    width: 100%;
-    background-image: url(./spacebg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-align: center;
-  }
-  
-  *::selection {
-    background-color: rgb(176, 50, 4);
-    color: white;
-  }
-  
-  .cursor {
-    height: 50px;
-    width: 50px;
-    background-color: blue;
-    filter: blur(10px);
-    mix-blend-mode: difference;
-    border-radius: 50%;
-    position: absolute;
-    transition: all ease-out 0.2s;
-    pointer-events: none; /* Ensure the cursor doesn't interfere with clicks */
-  }
-  
-  #heading {
-    width: 100%;
-    height: 20vh;
-    margin-top: -20vh;
-  }
-  
-  #heading h1 {
-    font-size: 7vw;
-    padding-top: 4vw;
-    color: transparent;
-    background-image: url(./rain_bg.jpeg);
-    -webkit-background-clip: text;
-  }
-  
-  #main {
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #timer {
-    height: 50vh;
-    width: 50vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  #timer h3 {
-    font-size: 10vw;
-    margin-top: -7vw;
-    margin-right: 2vw;
-    color: whitesmoke;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  }
-  
-  #controls {
-    display: flex;
-    gap: 3vw;
-    margin-top: 1vw;
-    margin-left: -2vw;
-  }
-  
-  #timer a {
-    font-size: 3.5vw;
-    padding: 1vw;
-    border-radius: 50px;
-    font-weight: 500;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-  }
-  
-  #timer h4 {
-    padding: 10px 20px;
-    border: 1px solid cyan;
-    border-radius: 50px;
-    letter-spacing: -0.5px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  #timer h4::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(160, 2, 160);
-    left: 0;
-    bottom: -100%;
-    border-radius: 50px;
-    transition: all ease 0.3s;
-  }
-  
-  #timer h4:hover::after {
-    bottom: 0;
-    border-radius: 0;
-  }
-  
-  #timer h4 a {
-    text-decoration: none;
-    color: black;
-    position: relative;
-    z-index: 9;
-  }
-  
-  #timer h4:hover a {
-    color: white;
-  }
-  
-  #footer h2 {
-    margin-top: -13vh;
-    font-size: 3vw;
-    font-family: 'Times New Roman', Times, serif;
-    color: #ae01b7;
-    text-shadow: 0 0 10px rgba(255, 37, 201, 0.8);
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat';
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-image: url(https://res.cloudinary.com/dcmvy81rr/image/upload/v1740929850/another_bg_rtyy8r.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+*::selection {
+  background-color: rgb(176, 50, 4);
+  color: white;
+}
+
+#main-pomodoro {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./spacebg.jpg); /* Background image for Pomodoro */
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cursor {
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  filter: blur(10px);
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  position: absolute;
+  transition: all ease-out 0.2s;
+  pointer-events: none; /* Ensure the cursor doesn't interfere with clicks */
+}
+
+#heading-pomodoro {
+  width: 100%;
+  margin-top: -10vh; /* Adjust as needed */
+}
+
+#heading-pomodoro h1 {
+  font-size: 7vw;
+  color: transparent;
+  background-image: url(./rain_bg.jpeg);
+  -webkit-background-clip: text;
+  margin: 0; /* Remove default margin */
+}
+
+#timer-pomodoro {
+  height: 50vh;
+  width: 50vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5vh; /* Adjust as needed */
+}
+
+#timer-pomodoro h3 {
+  font-size: 10vw;
+  color: whitesmoke;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  margin: 0; /* Remove default margin */
+}
+
+#controls-pomodoro {
+  display: flex;
+  gap: 3vw;
+  margin-top: 2vh; /* Adjust as needed */
+}
+
+#timer-pomodoro a {
+  font-size: 3.5vw;
+  padding: 1vw;
+  border-radius: 50px;
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+#timer-pomodoro h4 {
+  padding: 10px 20px;
+  border: 1px solid cyan;
+  border-radius: 50px;
+  letter-spacing: -0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+#timer-pomodoro h4::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(160, 2, 160);
+  left: 0;
+  bottom: -100%;
+  border-radius: 50px;
+  transition: all ease 0.3s;
+}
+
+#timer-pomodoro h4:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+
+#timer-pomodoro h4 a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  z-index: 9;
+}
+
+#timer-pomodoro h4:hover a {
+  color: white;
+}
+
+#footer-pomodoro {
+  margin-top: 5vh; /* Adjust as needed */
+}
+
+#footer-pomodoro h2 {
+  font-size: 3vw;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ae01b7;
+  text-shadow: 0 0 10px rgba(255, 37, 201, 0.8);
+  margin: 0; /* Remove default margin */
+}
+
+#controls-pomodoro {
+  display: flex;
+  gap: 3vw;
+  margin-top: 2vh; /* Adjust as needed */
+}
+
+#controls-pomodoro h4 {
+  padding: 10px 20px;
+  border: 1px solid cyan;
+  border-radius: 50px;
+  letter-spacing: -0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+#controls-pomodoro h4::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(160, 2, 160);
+  left: 0;
+  bottom: -100%;
+  border-radius: 50px;
+  transition: all ease 0.3s;
+}
+
+#controls-pomodoro h4:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+
+#controls-pomodoro h4 a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  z-index: 9;
+}
+
+#controls-pomodoro h4:hover a {
+  color: white;
+}

@@ -1,15 +1,32 @@
 import React, { useState, useEffect } from "react";
-import "../styles/POMO.css"; 
+import "../styles/POMO.css"; // Import the updated CSS
 
 const Pomodoro = () => {
-  const [timeInSeconds, setTimeInSeconds] = useState(25 * 60);
+  // Load initial state from localStorage or use defaults
+  const [timeInSeconds, setTimeInSeconds] = useState(() => {
+    const savedTime = localStorage.getItem("pomodoroTime");
+    return savedTime ? parseInt(savedTime, 10) : 25 * 60;
+  });
+
   const [timer, setTimer] = useState(null);
-  const [sessionCount, setSessionCount] = useState(0);
+  const [sessionCount, setSessionCount] = useState(() => {
+    const savedSessionCount = localStorage.getItem("pomodoroSessionCount");
+    return savedSessionCount ? parseInt(savedSessionCount, 10) : 0;
+  });
+
+  // Save state to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("pomodoroTime", timeInSeconds);
+  }, [timeInSeconds]);
+
+  useEffect(() => {
+    localStorage.setItem("pomodoroSessionCount", sessionCount);
+  }, [sessionCount]);
 
   // Timer logic
   useEffect(() => {
     if (timeInSeconds === 0) {
-      setTimeInSeconds(5 * 60);
+      setTimeInSeconds(5 * 60); // Reset to 5 minutes for the break
       setSessionCount((prev) => prev + 1);
     }
   }, [timeInSeconds]);
@@ -28,10 +45,19 @@ const Pomodoro = () => {
     setTimer(null);
   };
 
+  const stopTimer = () => {
+    clearInterval(timer);
+    setTimer(null);
+    // Do not reset timeInSeconds or sessionCount
+  };
+
   const resetTimer = () => {
     clearInterval(timer);
     setTimer(null);
-    setTimeInSeconds(25 * 60);
+    setTimeInSeconds(25 * 60); // Reset to 25 minutes
+    setSessionCount(0); // Reset session count
+    localStorage.removeItem("pomodoroTime"); // Clear saved time
+    localStorage.removeItem("pomodoroSessionCount"); // Clear saved session count
   };
 
   const formatTime = (seconds) => {
@@ -59,6 +85,11 @@ const Pomodoro = () => {
           <h4>
             <a id="reset-button" onClick={resetTimer}>
               Reset
+            </a>
+          </h4>
+          <h4>
+            <a id="stop-button" onClick={stopTimer}>
+              Stop
             </a>
           </h4>
         </div>
