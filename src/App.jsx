@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import LandingPage from "./components/LandingPage";
-import Pomodoro from "./components/Pomodoro";
-import Puzzle from "./components/Puzzle";
-import TodoList from "./components/TodoList";
+import Navbar from "./Components/Navbar";
+import LandingPage from "./Components/LandingPage";
+import Pomodoro from "./Components/Pomodoro";
+import Puzzle from "./Components/Puzzle";
+import TodoList from "./Components/TodoList";
 
 const App = () => {
   const navLinks = [
