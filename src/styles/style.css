@@ -1,12 +1,19 @@
-/* Home.css */
+
+
 #main-home {
-    width: 100%;
-    height: 100vh;
-    background-image: url(https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?q=80);
-    background-size: cover;
-    background-position: center; /* Center the background image */
-    overflow: hidden; /* Prevent scrollbars within the #main section */
-  }
+  width: 100vw;  /* Ensures full width */
+  height: 100vh; /* Ensures full height */
+  background-image: url(https://res.cloudinary.com/dcmvy81rr/image/upload/v1741631114/3468403_bxhebf.jpg);
+  background-size: 40cm; /* Ensures it covers the entire section without stretching */
+ /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  overflow: hidden; /* Ensures no scrolling */
+  display: flex; /* Helps in centering content if needed */
+  justify-content: center;
+  align-items: center;
+}
+
+
   
   #hero-home {
     color: white;

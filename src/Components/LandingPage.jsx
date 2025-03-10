@@ -5,7 +5,7 @@ const LandingPage = () => {
   return (
     <div id="main-home">
       <div id="hero-home">
-        <h1>Get in the zone</h1>
+        
       </div>
     </div>
   );
